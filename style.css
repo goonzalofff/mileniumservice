@@ -89,7 +89,7 @@ nav ul li a:hover {
   
   /* Sección Hero */
   .hero {
-    background-image: url('/img/comercial.jpg'); /* Imagen de fondo */
+    background-image: url('./img/comercial.jpg'); /* Imagen de fondo */
     background-size: cover;
     background-position: center;
     color: rgb(2, 1, 2);
