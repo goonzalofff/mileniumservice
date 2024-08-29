@@ -13,14 +13,11 @@ body {
     padding: 20px 50px;
     background:linear-gradient(45deg,hsl(216, 96%, 45%),#62daff,#2164f4,#23d5ab );
     color: white;
+    
 }
 
 /* Estilos del logo */
-#logo {
-  margin-left: 1%;
-  ;
 
-}
 
 
 /* Estilos del menú de navegación */
@@ -36,14 +33,15 @@ nav ul li {
 }
 
 nav ul li a {
-    color: rgb(235, 217, 217);
+    color: rgb(237, 239, 243);
     text-decoration:none;
-    font-size: 18px;
+    font-size: 22px;
     transition: color 0.3s ease;
+    text-shadow: -1px -1px 0 #000
 }
 
 nav ul li a:hover {
-    color: #ca4d0e;
+    color: #110eca;
 }
 
 /* Estilos para el menú hamburguesa */
@@ -66,37 +64,163 @@ nav ul li a:hover {
     nav ul {
         display: none;
         flex-direction: column;
-        background-color: #33333398;
+        background-color: #332e2e98;
         position: absolute;
         top: 70px;
         right: 0;
         width: 100%;
         text-align: center;
+        opacity: 10;
+        z-index: 9999;
+        transition: all 0.5s;
+        
+        
     }
 
     nav ul.active {
-        display: flex;
+        display: block;
     }
 
     nav ul li {
-        margin: 20px 0;
+        margin: 50px 0;
     }
 
     .menu-hamburguesa {
-        display: flex;
+        display: block;
     }
+}
+
+/** slidersection **/
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 750%;
+  margin: 0px;;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+  width: 100%;
+    flex: 1;
+    background-size: cover;
+    background-position: center;
+}
+.slider__content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: rgb(221, 207, 207);
+  transform: translate(-50%, -50%);
+  width: 50%;
+  text-align: center;
+  z-index: 199;
+}
+.slider__title{
+  font-size: 2.2em;
+  margin: 0;
+}
+.slider__txt{
+  margin: 5px 0;
+}
+.slider__link {
+  color: #f7f2f4;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.controls  {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+.controls button {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 100px;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 28px;
+}
+
+.controls button:hover {
+  background-color: rgba(93, 93, 97, 0.7);
+}
+
+
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+
+  .slider-container {
+    position: relative;
+    width: 100%;
+    height: 310px;
+    margin: 0px;
+    overflow: hidden;
+    
+  }
+  .slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+      padding-bottom: 15%; /* Ajusta la relación de aspecto a 4:3 para pantallas más pequeñas */
+  }
+
+  .slider__content{
+    position: absolute;
+    top: 50%;
+    left: 16%;
+    font-size: 5%;
+    color: rgb(221, 207, 207);
+    transform: translate(-50%, -50%);
+    width: 10%;
+    text-align: center;
+    z-index: 1;
+  }
+
+  .controls button {
+      padding: 10px;
+      font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .slider {
+      padding-bottom: 100%; /* Ajusta la relación de aspecto a 1:1 para pantallas muy pequeñas */
+  }
+
+  .controls button {
+      padding: 5px;
+      font-size: 14px;
+  }
 }
   
   /* Sección Hero */
   .hero {
-    background-image: url('./img/comercial.jpg'); /* Imagen de fondo */
+    background-image: url('/img/banner3.png'); /* Imagen de fondo */
     background-size: cover;
     background-position: center;
     color: rgb(2, 1, 2);
-    border: 1px groove #33333362;
-    padding: 100px 20px;
+    border: 10px groove #33333362;
+    width: 100%;
+    height: 500px;
     text-align: center;
     z-index: 1;
+    box-shadow: #111010;
     
   }
   
@@ -132,13 +256,16 @@ nav ul li a:hover {
   /* Sección de Servicios */
 
   #service h2{
-    color: #424242;
+    color: #af2626;
   }
   .services {
     display: flex;
     justify-content: space-around;
     padding: 50px 20px;
     background-color: white;
+    border-radius: 10px;
+  box-shadow: 0 0 15px rgba(14, 13, 13, 0.308);
+  flex: 1;
   }
   
   .service-item {
@@ -150,6 +277,9 @@ nav ul li a:hover {
     max-width: 350px;
     height: 60%;
     margin-bottom: 20px;
+    border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 92, 168, 0.808);
+  flex: 1;
   }
   
   .service-item h2 {
@@ -185,13 +315,15 @@ nav ul li a:hover {
   text-transform: uppercase;
   font-weight: 600;
   text-align: center;
-  color: #464545;
+  color: #302f2f;
 }
 
 #texto-about p {
   text-align: justify;
   font-size: 19px;
   padding-right: 27px;
+  
+  
 }
 #boton-llamada {
   width: 210px;
@@ -220,6 +352,7 @@ nav ul li a:hover {
     display: flex;
     align-items: center;
     transition: background-color 0.3s ease;
+    box-shadow: 0 0 15px rgba(14, 13, 13, 0.308);
 }
 
 .call-button i {
@@ -228,6 +361,7 @@ nav ul li a:hover {
 
 .call-button:hover {
     background-color: #043b11;
+    box-shadow: 0 0 15px rgba(14, 13, 13, 0.897);
 }
 
 #img-about {
@@ -236,6 +370,8 @@ nav ul li a:hover {
   border: 0;
   width: 70%;
   height: 100%;
+  
+  
 }
 .seo #texto-about {
   padding-top: 50px;
@@ -252,10 +388,10 @@ nav ul li a:hover {
 
 .counter-box {
   text-align: center;
-  background-color: #c2090923;
+  background-color: #f7f2f223;
   padding: 20px 30px;
   border-radius: 10px;
-  box-shadow: 0 0 15px rgba(70, 56, 56, 0.1);
+  box-shadow: 0 0 15px rgba(14, 13, 13, 0.308);
   flex: 1;
 }
 
@@ -422,6 +558,16 @@ nav ul li a:hover {
     nav ul li {
       margin-left: 0;
       margin-bottom: 10px;
+    }
+
+    .hero {
+      
+      border: 1px groove #33333362;
+      padding: 20px 30px;
+      text-align: center;
+      z-index: -1;
+      box-shadow: #111010;
+      
     }
   
     .hero h1 {
